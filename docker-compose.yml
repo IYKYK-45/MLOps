@@ -1,0 +1,19 @@
+version: '3.8'
+
+services:
+  #this is your ai api service
+  web-api:
+    image: garvit45/my-mlops-app:latest
+    ports:
+      - "8000:8000"
+    restart: always
+    environment:
+      - ENV=production
+
+  #day4: adding a visualizer to your container
+  visualizer:
+    image: dockersamples/visualizer
+    ports:
+      - "8080:8080"
+    volumes:
+      - "/var/run/docker.sock:/var/run/docker.sock"
