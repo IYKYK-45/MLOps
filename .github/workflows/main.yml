@@ -28,4 +28,4 @@ jobs:
         context: .
         push: true
         # Replace 'your-username' with your actual Docker Hub ID
-        tags: your-username/my-mlops-app:latest
+        tags: your_docker_id/my-mlops-app:latest
