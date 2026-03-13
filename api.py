@@ -3,4 +3,4 @@ app = FastAPI()
 
 @app.get("/")
 def read_root():
-	return {"Status": "MLOps environment active", "User": "garvit"}
+	return {"status": "Active", "message": "MLOps Pipeline v1.0 is now Live","user": "IYKYK-45"}
