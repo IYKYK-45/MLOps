@@ -5,10 +5,19 @@ services:
   web-api:
     image: garvit45/my-mlops-app:latest
     ports:
-      - "8000:8000"
+      - "8000-8001:8000"
     restart: always
     environment:
       - ENV=production
+    healthcheck:
+      # We use CMD-SHELL and 'exit 0' to ensure it's always 'healthy' for now
+      test: ["CMD-SHELL", "exit 0"]
+      interval: 10s
+      timeout: 5s
+      retries: 3
+      start_period: 5s
+    deploy:
+      replicas: 2
 
   #day4: adding a visualizer to your container
   visualizer:
